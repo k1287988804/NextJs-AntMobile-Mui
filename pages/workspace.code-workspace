@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		},
+		{
+			"name": "my-app @ c76805d",
+			"uri": "gitlens://c76805d/e:/NextJS/my-app?{\"path\":\"/e:/NextJS/my-app\",\"ref\":\"c76805de90d09a483fbca526830b86f7cbb2aeb9\",\"repoPath\":\"e:/NextJS/my-app\"}"
+		}
+	],
+	"settings": {}
+}

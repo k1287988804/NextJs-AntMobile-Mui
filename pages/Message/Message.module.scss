@@ -1,0 +1,15 @@
+.cards {
+	height: 100%;
+	width: 100%;
+	background-color: antiquewhite;
+	.card {
+		width: 1.875rem;
+		height:	0.5rem;
+		float: left;
+		color: #fff;
+		background-color: aquamarine;
+	}
+	.card:nth-child(4){
+		color: #000;
+	}
+}
