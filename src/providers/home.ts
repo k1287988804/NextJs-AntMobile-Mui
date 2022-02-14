@@ -5,7 +5,7 @@ let count = 0
 export class HomeProvider {
 	static async getList(params?: Object): Promise<string[]> {
 		if (count >= 5) {
-			return []
+			// return []
 		}
 		count++
 		return httpProvider.get('/content', { params })
