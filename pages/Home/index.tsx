@@ -36,7 +36,12 @@ const Home: FC = () => {
 			</div>
 			<div>
 				{[1,2,3,4,5,6,7,8].map((item, i) => (i >= 4 && <div key={i} className={styles.subDiv}>
-					<div>{item}</div>
+					<Link
+						href={`/HomeDetail/[id]`}
+						as={`/HomeDetail/${item}`}
+					>
+						<div>{item}</div>
+					</Link>
 				</div>)).filter(Boolean)}
 			</div>
 		</div>

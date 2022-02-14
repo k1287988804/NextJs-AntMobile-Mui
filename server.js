@@ -58,9 +58,21 @@ app.get('/api/contract/:id', (req, res, next) => {
 	})
 })
 
+app.get('/api/ids', (req, res, next) => {
+	res.send({
+		code: 0,
+		success: true,
+		msg: '成功',
+		data: [1, 2, 3, 4, 5, 6, 7, 8]
+	})
+})
+
 
 app.put('/api/contract/put', (req, res, next) => {
 	txt = 'see you'
+	setInterval(() => {
+		txt = 'see me'
+	}, 2000)
 	res.send({
 		code: 0,
 		success: true,

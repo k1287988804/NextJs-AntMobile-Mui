@@ -1,6 +1,7 @@
 
 import { useRouter } from 'next/router'
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
+import { httpProvider } from '@/providers/http'
 
 function HomeDetail({id}: InferGetStaticPropsType<typeof getStaticProps>){
 	const router = useRouter()
@@ -24,13 +25,12 @@ export const getStaticProps: GetStaticProps = async ({params}) => {
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
+
+	const Ids: Array<number> = await httpProvider.get('/ids')
+	const IdsMap = Ids.map(item => ({ params: { id: String(item)}}))
+
 	return {
-		paths: [
-			{ params: { id: '1' } }, 
-			{ params: { id: '2' } },
-			{ params: { id: '3' } },
-			{ params: { id: '4' } },
-		],
+		paths: IdsMap,
 		fallback: false
 	}
 }
