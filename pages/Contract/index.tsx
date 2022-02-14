@@ -1,15 +1,14 @@
-import { Toast } from 'antd-mobile'
-import { InferGetStaticPropsType } from 'next'
+import { useGetContractById, useGetId } from '@/providers/contract'
 import React, { useEffect } from 'react'
 
 const Contract = () => {
-	useEffect(() => {
-		// Toast.show({
-		// 	content: '测试'
-		// })
-	}, [])
 
-	return <div>联系</div>
+	const { data: user } = useGetId()
+	const { data: contract } = useGetContractById(user.id)
+
+	return <div>
+		<span>{contract}</span>
+	</div>
 }
 
 export default Contract
