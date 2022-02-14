@@ -19,6 +19,7 @@ export const useGetId = () => {
 
 export const useGetContractById = (id: string) => {
 	const url = id ? `/contract/${id}` : null
+	// 如果useSWR第一个参数方法返回null false类型 那么不会执行此hook
 	const { data, error, mutate } = useSWR(() => url, async () => await httpProvider.get(url || '', {}))
 
 	return {
