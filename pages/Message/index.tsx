@@ -13,7 +13,7 @@ const Message = ({data}: InferGetStaticPropsType<typeof getServerSideProps>) => 
 	const bgclist = ['red','blue','green','yellow']
 	return <>
 		<div className={styles.cards}>
-			{data.map((item: Person , i: number) => (
+			{(data as Array<Person>).map((item: Person , i: number) => (
 				<div className={styles.card} key={item.name} style={{backgroundColor: bgclist[i]}}>
 					{item.name}
 				</div>
