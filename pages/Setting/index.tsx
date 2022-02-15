@@ -18,12 +18,17 @@ const Setting: FC = () => {
 		ddd: 4
 	}
 
+	function func<T>(t: T): T[]{
+		return [t]
+	}
+
 	const getValue: Function = <T extends Object, K extends keyof T>(t: T, k: K): T[K]  => {
 		return t[k]
 	}
 
 	return <div>
-		{getValue(allCodes, 'aaa')}
+		{getValue(allCodes, 'aaa')}&nbsp;&nbsp;
+		{(func('666') as Array<string>)!.map(x => x)}
 	</div>
 }
 
